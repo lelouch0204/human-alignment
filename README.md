@@ -84,3 +84,22 @@ Dependencies and runtime loading have not been tested in this workspace. The smo
 - [Paper](https://www.nature.com/articles/s41586-025-09631-6)
 
 Checkpoint licenses are supplied by their publisher. Research planning lives in `proposal.md` and `visual-benchmark-research.md`.
+
+## Navon human-distance training pilot
+
+The [shape experiment guide](experiments/navon-shapes.md) uses recovered original
+images and human visual-search measurements from Jacob & Arun. It evaluates all
+six checkpoints and fits a small distance transform on Base embeddings, with
+entire images held out for validation and testing.
+
+```bash
+uv sync --locked
+uv run --locked python -m human_alignment.navon_shapes prepare --download-data
+mkdir -p outputs/navon_human
+sbatch --export=ALL,NAVON_DOWNLOAD_MODELS=1 run_navon_human.sbatch
+```
+
+The download flag permits missing checkpoints to be fetched on the cluster.
+Results go to `outputs/navon_shapes/run-<job ID>/`. See the guide for methods,
+cache controls and limitations. The earlier letter-response script remains
+available separately; no hand-written human-response manifest is needed here.

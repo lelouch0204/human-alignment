@@ -1,0 +1,23 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Does learning human concepts help a model see shapes better?}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+Human vision integrates local parts into global shapes and recognizes objects despite changes in appearance~\cite{navon,biederman}. Multiscale models explain hierarchical-shape perception through interactions between global and local information~\cite{jacob}, while neural networks can differ from humans in their reliance on shape and texture~\cite{geirhos}. We ask whether learning human conceptual relationships improves perception beyond conceptual similarity. We compare frozen SigLIP-B and DINOv2-B models~\cite{siglip,dinov2}, using Base, teacher-distilled UnAligNet, and human-aligned AligNet checkpoints to assess distillation and alignment separately~\cite{alignet}. Our initial analysis compares model predictions with human visual search times for 49 shapes combining seven outlines with seven local elements~\cite{jacob}. Planned evaluations use coarse-grained Levels judgments to check conceptual alignment, generated outlines to test matching across translation and rotation~\cite{cooper,jolicoeur}, and published shape--texture conflict images to compare cue use with human responses~\cite{alignet,geirhos}. Clean-image recognition will help distinguish changes in cue preference from general recognition gains. We expect improved conceptual agreement and potentially more shape-based choices after alignment, with limited transfer to unfamiliar-shape matching. Restricted stimulus coverage and the absence of human measurements for generated shapes limit conclusions about human-like perception. Future work will broaden the tested shape families and transformations to examine the generality of any transfer.
+\end{abstract}
+\begin{thebibliography}{9}
+\bibitem{navon} D. Navon. Forest before trees: The precedence of global features in visual perception. \emph{Cognitive Psychology}, 9(3), 353--383, 1977. \href{https://doi.org/10.1016/0010-0285(77)90012-3}{doi:10.1016/0010-0285(77)90012-3}.
+\bibitem{biederman} I. Biederman and G. Ju. Surface versus edge-based determinants of visual recognition. \emph{Cognitive Psychology}, 20(1), 38--64, 1988.
+\bibitem{jacob} G. Jacob and S. P. Arun. How the forest interacts with the trees: Multiscale shape integration explains global and local processing. \emph{Journal of Vision}, 20(10), article 20, 2020. \href{https://doi.org/10.1167/jov.20.10.20}{doi:10.1167/jov.20.10.20}.
+\bibitem{geirhos} R. Geirhos, P. Rubisch, C. Michaelis, M. Bethge, F. A. Wichmann, and W. Brendel. ImageNet-trained CNNs are biased towards texture; increasing shape bias improves accuracy and robustness. \emph{International Conference on Learning Representations}, 2019.
+\bibitem{siglip} X. Zhai, B. Mustafa, A. Kolesnikov, and L. Beyer. Sigmoid loss for language image pre-training. \emph{Proceedings of the IEEE/CVF International Conference on Computer Vision}, 11975--11986, 2023. \href{https://openaccess.thecvf.com/content/ICCV2023/html/Zhai_Sigmoid_Loss_for_Language_Image_Pre-Training_ICCV_2023_paper.html}{Conference paper}.
+\bibitem{dinov2} M. Oquab et al. DINOv2: Learning robust visual features without supervision. \emph{Transactions on Machine Learning Research}, 2024. \href{https://openreview.net/forum?id=a68SUt6zFt}{Journal paper}.
+\bibitem{alignet} L. Muttenthaler et al. Aligning machine and human visual representations across abstraction levels. \emph{Nature}, 647, 349--355, 2025. \href{https://doi.org/10.1038/s41586-025-09631-6}{doi:10.1038/s41586-025-09631-6}.
+\bibitem{cooper} I. Biederman and E. E. Cooper. Evidence for complete translational and reflectional invariance in visual object priming. \emph{Perception}, 20(5), 585--593, 1991.
+\bibitem{jolicoeur} P. Jolicoeur. The time to name disoriented natural objects. \emph{Memory \& Cognition}, 13(4), 289--303, 1985.
+\end{thebibliography}
+\end{document}
